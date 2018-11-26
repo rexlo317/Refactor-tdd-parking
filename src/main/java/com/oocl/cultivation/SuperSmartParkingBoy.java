@@ -7,23 +7,10 @@ public class SuperSmartParkingBoy extends ParkingBoy {
     private int parkingLotNumber;
     private Manager manager;
 
-    public SuperSmartParkingBoy(ParkingLot parkingLot){
-        super(parkingLot);
-        this.parkingLots[0] = parkingLot;
-        this.parkingLotNumber = 1;
-    }
-
     public SuperSmartParkingBoy(ParkingLot[] parkingLots){
         super(parkingLots);
         this.parkingLots = parkingLots;
         this.parkingLotNumber = parkingLots.length;
-    }
-
-    public SuperSmartParkingBoy(ParkingLot parkingLot, Manager manager) {
-        super(parkingLot, manager);
-        this.parkingLots[0] = parkingLot;
-        this.parkingLotNumber = 1;
-        this.manager = manager;
     }
 
     public SuperSmartParkingBoy(ParkingLot[] parkingLots, Manager manager) {
