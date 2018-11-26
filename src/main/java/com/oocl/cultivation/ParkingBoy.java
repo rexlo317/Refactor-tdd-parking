@@ -58,13 +58,7 @@ public class ParkingBoy {
         if (ticket != null) {
             for (int index=0; index<this.parkingLotNumber; index++) {
                 if (this.parkingLots[index].getCars().containsKey(ticket)) {
-                    Car tempCar = this.parkingLots[index].getCars().get(ticket);
-                    this.parkingLots[index].getCars().remove(ticket);
-                    ticket.setUsed(true);
-                    if(manager!=null)
-                        this.manager.setErrorMessage(null);
-                    this.lastErrorMessage = null;
-                    return tempCar;
+                    return checkedTicketGetCar(index, ticket);
                 } else {
                     if (index >= this.parkingLotNumber-1) {
                         this.lastErrorMessage = "Unrecognized parking ticket.";
@@ -82,6 +76,16 @@ public class ParkingBoy {
             return null;
         }
         return null;
+    }
+
+    private Car checkedTicketGetCar(int index, ParkingTicket ticket){
+        Car tempCar = this.parkingLots[index].getCars().get(ticket);
+        this.parkingLots[index].getCars().remove(ticket);
+        ticket.setUsed(true);
+        if(manager!=null)
+            this.manager.setErrorMessage(null);
+        this.lastErrorMessage = null;
+        return tempCar;
     }
 
     public String getLastErrorMessage() {
