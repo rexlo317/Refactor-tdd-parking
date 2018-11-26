@@ -32,10 +32,6 @@ public class Manager extends ParkingBoy {
         parkingBoys.put(boyType, parkingBoy);
     }
 
-    public void removeParkingBoy(String boyType, ParkingBoy parkingBoy){
-        parkingBoys.remove(boyType, parkingBoy);
-    }
-
     public ParkingBoy getParkingBoy(String boyType){
         return parkingBoys.get(boyType);
     }

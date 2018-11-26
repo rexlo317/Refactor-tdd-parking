@@ -19,10 +19,6 @@ public class ParkingLot {
         return cars;
     }
 
-    public void setCars(Map<ParkingTicket, Car> cars) {
-        this.cars = cars;
-    }
-
     public int getCapacity() {
         return capacity;
     }

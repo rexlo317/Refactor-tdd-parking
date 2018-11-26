@@ -6,10 +6,6 @@ public class ParkingTicket {
         isUsed = false;
     };
 
-    public boolean isUsed() {
-        return isUsed;
-    }
-
     public void setUsed(boolean used) {
         isUsed = used;
     }
