@@ -32,6 +32,11 @@ public class SmartParkingBoy extends ParkingBoy {
                     return null;
             }
         }
+        ParkingTicket parkingTicket = checkedLotsParkNow(car);
+        return parkingTicket;
+    }
+
+    private ParkingTicket checkedLotsParkNow(Car car){
         int maxEmptyCapacityLotNumber = getMax();
         ParkingTicket parkingTicket = new ParkingTicket();
         this.parkingLots[maxEmptyCapacityLotNumber].getCars().put(parkingTicket, car);
